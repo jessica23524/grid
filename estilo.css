@@ -1,0 +1,69 @@
+/* Configuración básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Configuración del grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    width: 90vw;
+    max-width: 1200px;
+}
+
+/* Configuración de cada tarjeta con imágenes */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+/* Posicionamiento específico para cada tarjeta */
+.card1 { grid-column: 1 / 2; grid-row: 1 / 2; }
+.card2 { grid-column: 2 / 4; grid-row: 1 / 2; }
+.card3 { grid-column: 4 / 5; grid-row: 1 / 3; }
+
+/* La imagen 4 ocupa dos espacios verticales */
+.card4 { grid-column: 1 / 2; grid-row: 2 / 4; }
+
+.card5 { grid-column: 2 / 3; grid-row: 2 / 3; }
+.card6 { grid-column: 3 / 4; grid-row: 2 / 3; }
+
+/* Mueve la card7 debajo de card5 */
+.card7 { grid-column: 2 / 3; grid-row: 3 / 4; }
+
+/* Hace que la card8 sea más ancha ocupando dos columnas */
+.card8 { grid-column: 3 / 5; grid-row: 3 / 4; }
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
